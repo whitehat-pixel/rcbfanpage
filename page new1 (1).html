@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RCB Fan Page</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+
+            /* Attractive gradient background */
+            background: linear-gradient(135deg, #d50032, #8b0026);
+            animation: bgmove 10s infinite alternate;
+        }
+
+        @keyframes bgmove {
+            from { background-position: left; }
+            to { background-position: right; }
+        }
+
+        /* Animated Heading */
+        h1 {
+            text-align: center;
+            font-size: 48px;
+            margin-top: 30px;
+            text-shadow: 0px 0px 15px black;
+            animation: headingPop 1.5s ease-in-out;
+        }
+
+        @keyframes headingPop {
+            0% { transform: scale(0.7); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Tagline */
+        .tagline {
+            text-align: center;
+            font-size: 28px;
+            font-style: italic;
+            margin-top: -10px;
+            color: #ffeb3b;
+            text-shadow: 0px 0px 10px #ffcc00;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0px 0px 8px #ffcc00; }
+            to { text-shadow: 0px 0px 20px #ffea00; }
+        }
+
+        /* Attractive box for content */
+        .offers-box {
+            width: 70%;
+            margin: auto;
+            margin-top: 40px;
+            padding: 20px;
+            border: 3px solid gold;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(3px);
+            animation: fadeIn 2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        ul {
+            list-style-type: square;
+            font-size: 20px;
+            line-height: 32px;
+        }
+
+        /* Button design */
+        .button-box {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .next-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: gold;
+            color: black;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0px 0px 12px black;
+            transition: 0.3s;
+        }
+
+        .next-btn:hover {
+            background-color: #ffdd33;
+            box-shadow: 0px 0px 18px #ffcc00;
+            transform: scale(1.08);
+        }
+video{
+    position:fixed;
+    right:0;
+    bottom:0;
+    min-width:100%;
+    min-height:100%;
+    z-index:-1;
+}
+
+.content{
+    color:white;
+    text-align:center;
+    margin-top:200px;
+    font-size:40px;
+}
+    </style>
+</head>
+
+<body>
+
+<video autoplay muted loop class="bg-video">
+  <source src="c:\sign video.mp4" type="video/mp4">
+</video>
+
+    <!-- HEADING -->
+    <h1>WELCOME TO THE RCB FAN ZONE</h1>
+
+    <!-- TAGLINE -->
+    <h3 class="tagline">"EE SALA CUP NAMDE!"</h3>
+
+    <!-- OFFER BOX -->
+    <div class="offers-box">
+        <h2>What This Website Offers</h2>
+        <ul>
+            <li>Team History: From 2008 to today</li>
+            <li>Top Players & Records</li>
+            <li>Match Highlights & Videos</li>
+            <li>Fan Corner & Quiz Section</li>
+            <li>Special Moments of Virat Kohli & the RCB Squad</li>
+        </ul>
+    </div>
+
+    <!-- BUTTON TO SECOND PAGE -->
+    <div class="button-box">
+        <a href="file:///C:/Users/purus/OneDrive/Documents/page%202.html" class="next-btn">Go to Next Page ▶</a>
+    </div>
+
+</body>
+</html>

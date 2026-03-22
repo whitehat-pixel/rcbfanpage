@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RCB History 2008</title>
+    <style>
+        body {
+            margin: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #d50032, #8b0026);
+            color: white;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 55px;
+            color: gold;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0px 0px 12px rgba(255, 215, 0, 0.8),
+                         0px 0px 25px rgba(255, 215, 0, 0.6);
+            margin-bottom: 40px;
+            margin-top: 10px;
+        }
+
+        img {
+            width: 50%;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            border: 3px solid gold;
+        }
+table{
+border-collapse:collapse;
+width:600px;
+font-family:Arial;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:10px;
+text-align:left;
+}
+
+th{
+background:#f2f2f2;
+}
+
+a{
+color:red;
+text-decoration:none;
+}
+body{
+font-family: Arial;
+background:red;
+color:white;
+text-align:center;
+}
+
+.container{
+width:500px;
+margin:auto;
+background:#222;
+padding:20px;
+border-radius:10px;
+}
+
+button{
+background:#e10600;
+color:white;
+border:none;
+padding:10px 20px;
+margin-top:10px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff3b3b;
+}
+
+    </style>
+</head>
+<body>
+
+<h1>RCB History Quiz</h1>
+
+<div class="container">
+
+<p id="question"></p>
+
+<div id="answers"></div>
+
+<button onclick="nextQuestion()">Next</button>
+
+<p id="score"></p>
+
+</div>
+
+<script>
+
+let quiz = [
+{q:"When was RCB founded?",a:["2006","2007","2008","2009"],c:2},
+{q:"Highest run scorer for RCB?",a:["Virat Kohli","Gayle","ABD","Faf"],c:0},
+{q:"RCB home ground?",a:["Wankhede","Chinnaswamy","Eden","Kotla"],c:1},
+{q:"RCB finals played?",a:["1","2","3","4"],c:2},
+{q:"Mr 360?",a:["Kohli","ABD","Maxwell","Gayle"],c:1},
+{q:"First RCB captain?",a:["Kohli","Dravid","Kumble","Taylor"],c:1},
+{q:"Who scored 175*?",a:["Kohli","Gayle","ABD","Maxwell"],c:1},
+{q:"RCB owner?",a:["Reliance","United Spirits","Tata","Adani"],c:1},
+{q:"Team colors?",a:["Blue","Yellow","Red & Black","Green"],c:2},
+{q:"Kohli 973 runs year?",a:["2015","2016","2017","2018"],c:1}
+];
+
+let index = 0;
+let score = 0;
+
+function loadQuestion(){
+
+let q = quiz[index];
+document.getElementById("question").innerText = q.q;
+
+let ansHTML = "";
+
+for(let i=0;i<q.a.length;i++){
+ansHTML += `<div>
+<input type="radio" name="ans" value="${i}"> ${q.a[i]}
+</div>`;
+}
+
+document.getElementById("answers").innerHTML = ansHTML;
+
+}
+
+function nextQuestion(){
+
+let selected = document.querySelector('input[name="ans"]:checked');
+
+if(selected){
+
+if(parseInt(selected.value) === quiz[index].c){
+score++;
+}
+
+index++;
+
+if(index < quiz.length){
+loadQuestion();
+}
+else{
+document.querySelector(".container").innerHTML =
+`<h2>Your Score: ${score}/${quiz.length}</h2>`;
+}
+
+}
+
+}
+
+loadQuestion();
+
+</script>
+    <div style="text-align:center; margin-top:40px;">
+        <a href="file:///C:/Users/purus/OneDrive/Documents/page%2010.html" 
+           style="
+                background:#FFD600;
+                color:black;
+                padding:15px 35px;
+                font-size:24px;
+                font-weight:900;
+                border-radius:15px;
+                text-decoration:none;
+                box-shadow:0px 4px 12px rgba(0,0,0,0.6);
+                display:inline-block;
+            ">
+            Go to Next Page ▶
+        </a>
+    </div>
+
+</body>
+</html>
